@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to the database (or create it if it doesn't exist)
-conn = sqlite3.connect('databases/trade_simulator.db')
+conn = sqlite3.connect('databases/stock.db')
 
 # Create a cursor object
 cursor = conn.cursor()
@@ -9,9 +9,8 @@ cursor = conn.cursor()
 # Create the table
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS users (
-    user TEXT PRIMARY KEY,
-    stocks TEXT,
-    balance REAL NOT NULL
+    serial INTEGER PRIMARY KEY AUTOINCREMENT,
+    stock_value REAL NOT NULL
 )
 ''')
 
