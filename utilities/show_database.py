@@ -23,9 +23,16 @@ def display_database(file_path):
     
     root = tk.Tk()
     root.title("Database Viewer")
+
+    frame = tk.Frame(root)
+    frame.pack(fill=tk.BOTH, expand=True)
     
-    tree = ttk.Treeview(root, columns=columns, show='headings')
-    tree.pack(expand=True, fill='both')
+    tree = ttk.Treeview(frame, columns=columns, show='headings')
+    
+    vsb = ttk.Scrollbar(frame, orient="vertical", command=tree.yview)
+    vsb.pack(side='right', fill='y')
+
+    tree.configure(yscrollcommand=vsb.set)
     
     for col in columns:
         tree.heading(col, text=col)
@@ -34,6 +41,7 @@ def display_database(file_path):
     for row in rows:
         tree.insert('', 'end', values=row)
     
+    tree.pack(fill=tk.BOTH, expand=True)
     root.mainloop()
 
 def open_file():

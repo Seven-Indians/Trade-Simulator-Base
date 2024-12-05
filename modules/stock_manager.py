@@ -33,12 +33,14 @@ def main(bought, sold):
     y = k*(x**2) + (3/2)*k*x + k
     n = ((y*100)//1)/100
     next_stock_value(n)
+    return n
 
 if __name__ == "__main__":
     sys.path.append(os.path.join(os.path.dirname(__file__), '/../modules'))
     import bot
 
-    for i in range(99):
+    n = int(input("Enter the number of values to be generated: "))
+    for i in range(n):
         bought, sold = bot.main()
         main(bought, sold)
         time.sleep(0.001)
