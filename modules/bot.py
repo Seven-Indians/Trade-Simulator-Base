@@ -4,9 +4,9 @@ import random
 def main():
     n_buy = 0
     n_sell = 0
-    for i in range(1, 101):
-        state = random.randint(0, 1)
-        if state == 0:
+    for _ in range(1, 101):
+        state = random.randint(0, 3)
+        if state > 1:
             n_stock = random.randint(1, 5)
             n_buy += n_stock
         else:
