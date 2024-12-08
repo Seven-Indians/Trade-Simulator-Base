@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to the database (or create it if it doesn't exist)
-conn = sqlite3.connect('databases/stock.db')
+conn = sqlite3.connect('databases/user.db')
 
 # Create a cursor object
 cursor = conn.cursor()
@@ -9,8 +9,9 @@ cursor = conn.cursor()
 # Create the table
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS users (
-    serial INTEGER PRIMARY KEY AUTOINCREMENT,
-    stock_value REAL NOT NULL
+    username TEXT PRIMARY KEY NOT NULL,
+    stocks INTEGER NOT NULL,
+    balance REAL NOT NULL
 )
 ''')
 

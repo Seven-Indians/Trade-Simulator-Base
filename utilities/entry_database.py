@@ -6,9 +6,9 @@ def add_user_to_database(username, database_file='databases/user.db'):
 
     # Insert user data
     cursor.execute('''
-        INSERT INTO users (user, balance, stocks)
+        INSERT INTO users (username, stocks, balance)
         VALUES (?, ?, ?)
-    ''', (username, 10000, 0))
+    ''', (username, 0, 1000))
 
     conn.commit()
     conn.close()
