@@ -12,7 +12,6 @@
 ## Commands to install external dependencies
 1. pip install customtkinter
 2. pip install matplotlib
-3. pip install sqlite3
-4. pip install pillow
+3. pip install pillow
 
 ### NOW, You Are Good To Go!!
